@@ -1,0 +1,61 @@
+﻿@model WebUser
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <br />
+    <br />
+    <div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center mb-4">Create Account</h3>
+                            <form class="form-body" asp-controller="Account" asp-action="Register" method="post">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label><strong>Fullname</strong></label>
+                                    <input type="text" name="WebUserFullName" value="@Model.WebUserFullName" class="form-control" id="inputFullname" placeholder="Joe Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label><strong>Email</strong></label>
+                                    <input type="email" name="WebUserEmail" value="@Model.WebUserEmail" class="form-control" id="inputEmailAddress" placeholder="hello@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label><strong>Password</strong></label>
+                                    <input type="password" name="WebUserPassword" class="form-control" id="inputChoosePassword" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label><strong>Re-Password</strong></label>
+                                    <input type="password" name="WebUserRePassword" class="form-control" id="inputChooseRePassword" placeholder="RePassword">
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
+                                </div>
+                            </form>
+                            <div class="new-account mt-3">
+                                <p>Already have an account? <a class="text-primary" asp-controller="Account" asp-action="Login">Sign in</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="~/admin/vendor/global/global.min.js"></script>
+    <script src="~/admin/js/quixnav-init.js"></script>
+    <!--endRemoveIf(production)-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model eCommerceProject.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card" style="opacity:unset">
+    <div class="card-body">
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <h4>Edit Product</h4>
+            </div>
+        </div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductID" />
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ProductName" class="control-label">Product Name</label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ProductPrice" class="control-label">Price</label>
+                    <input asp-for="ProductPrice" class="form-control" />
+                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="CategoryID" class="control-label">Category</label>
+                    <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryID"></select>
+                    <span asp-validation-for="CategoryID" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="BrandID" class="control-label">Brand</label>
+                    <select asp-for="BrandID" class="form-control" asp-items="ViewBag.BrandID"></select>
+                    <span asp-validation-for="BrandID" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ProductBarcode" class="control-label">Barcode</label>
+                    <input asp-for="ProductBarcode" class="form-control" />
+                    <span asp-validation-for="ProductBarcode" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6" maxlength="400" style="width: 10vh">
+                    <label asp-for="ProductDescription" class="control-label">Description</label>
+                    <input asp-for="ProductDescription" class="form-control" />
+                    <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                    <br />
+                            <button type="submit" value="Save" class="btn btn-primary px-4">Save</button> 
+                                <a style="margin-left:10px;" class="btn btn-primary" asp-action="Index">Back to List</a>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </form>
+            </div>
+        </div>
+    </div>
+</div>
+

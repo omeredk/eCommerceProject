@@ -1,0 +1,36 @@
+﻿@model eCommerceProject.Models.Brand
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card" style="opacity:unset">
+    <div class="card-body">
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <h3>Are you sure you want to delete this Brand?</h3>
+                <hr />
+                <div>
+                    <dl>
+                        <div class="row col-md-12" style="padding-right:unset">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.BrandName)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.BrandName)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="BrandID" />
+                        <input style="margin-left:12px" type="submit" value="Delete" class="btn btn-danger" />
+                        <a style="margin-left:12px" class="btn btn-primary" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<eCommerceProject.Models.Brand>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h1>Brand Editor</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Brand Name
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-primary">
+                            <a asp-action="Create">Create New</a>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Brand brand in Model)
+                {
+                    <tr>
+                        <td>
+                            @brand.BrandID
+                        </td>
+                        <td>
+                            @brand.BrandName
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@brand.BrandID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@brand.BrandID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@brand.BrandID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

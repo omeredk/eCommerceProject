@@ -1,0 +1,54 @@
+﻿@model IEnumerable<eCommerceProject.Models.WebUser>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WebUserFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WebUserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WebUserPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebUserFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebUserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebUserPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole.UserRoleName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WebUserID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WebUserID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WebUserID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

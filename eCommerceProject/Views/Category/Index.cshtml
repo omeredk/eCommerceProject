@@ -1,0 +1,48 @@
+﻿@model IEnumerable<eCommerceProject.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h1>Category Editor</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Category Name
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-primary">
+                            <a asp-action="Create">Create New</a>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Category category in Model)
+                {
+                    <tr>
+                        <td>
+                            @category.CategoryID
+                        </td>
+                        <td>
+                            @category.CategoryName
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@category.CategoryID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@category.CategoryID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@category.CategoryID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

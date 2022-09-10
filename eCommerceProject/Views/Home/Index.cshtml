@@ -1,0 +1,152 @@
+﻿@model HomeViewModel
+@{
+    Layout = "_Layout";
+}
+
+<!-- Hero section -->
+<section class="hero-section">
+	<div class="hero-slider owl-carousel">
+		<div class="hs-item set-bg" data-setbg="./eComm/img/bg.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-6 col-lg-7 text-white">
+						<span>New Arrivals</span>
+						<h2>denim jackets</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+						<a href="#" class="site-btn sb-line">DISCOVER</a>
+						<a href="#" class="site-btn sb-white">ADD TO CART</a>
+					</div>
+				</div>
+				<div class="offer-card text-white">
+					<span>from</span>
+					<h2>$29</h2>
+					<p>SHOP NOW</p>
+				</div>
+			</div>
+		</div>
+		<div class="hs-item set-bg" data-setbg="./eComm/img/bg-2.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-6 col-lg-7 text-white">
+						<span>New Arrivals</span>
+						<h2>denim jackets</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+						<a href="#" class="site-btn sb-line">DISCOVER</a>
+						<a href="#" class="site-btn sb-white">ADD TO CART</a>
+					</div>
+				</div>
+				<div class="offer-card text-white">
+					<span>from</span>
+					<h2>$29</h2>
+					<p>SHOP NOW</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="slide-num-holder" id="snh-1"></div>
+	</div>
+</section>
+<!-- Hero section end -->
+
+<!-- Features section -->
+<section class="features-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 p-0 feature">
+				<div class="feature-inner">
+					<div class="feature-icon">
+						<img src="~/eComm/img/icons/1.png" alt="#">
+					</div>
+					<h2>Fast Secure Payments</h2>
+				</div>
+			</div>
+			<div class="col-md-4 p-0 feature">
+				<div class="feature-inner">
+					<div class="feature-icon">
+						<img src="~/eComm/img/icons/2.png" alt="#">
+					</div>
+					<h2>Premium Products</h2>
+				</div>
+			</div>
+			<div class="col-md-4 p-0 feature">
+				<div class="feature-inner">
+					<div class="feature-icon">
+						<img src="~/eComm/img/icons/3.png" alt="#">
+					</div>
+					<h2>Free & fast Delivery</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Features section end -->
+
+<!-- latest product section -->
+<section class="top-letest-product-section">
+	<div class="container">
+		<div class="section-title">
+			<h2>LATEST PRODUCTS</h2>
+		</div>
+		<div class="product-slider owl-carousel">
+				@foreach (Product product in Model.ProductList.Reverse())
+				{
+			<div class="product-item">
+				<div class="pi-pic">
+					<img src="~/eComm/img/product/@(product.ProductID).jpg" alt="">
+					<div class="pi-links">
+						<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+						<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+					</div>
+				</div>
+				<div class="pi-text">
+					<h6>$@product.ProductPrice</h6>
+					<p>@product.ProductName</p>
+				</div>
+			</div>
+				}
+		</div>
+	</div>
+</section>
+<!-- latest product section end -->
+
+
+<!-- Product filter section -->
+@*<section class="product-filter-section">
+	<div class="container" style="align-items: center; justify-content: center;">
+		<div class="section-title">
+			<h2>BROWSE TOP SELLING PRODUCTS</h2>
+		</div>
+
+		<ul class="row product-filter-menu" style="display: flex; text-align: left;">
+			@foreach (Category category in Model.Categories)
+			{
+			<li><a href="#">@category.CategoryName</a></li>
+			}
+		</ul>
+		<div class="row">
+			<div class="col-lg-3 col-sm-6">
+				<div class="product-item">
+					<div class="pi-pic">
+						<img src="~/eComm/img/product/5.jpg" alt="">
+						<div class="pi-links">
+							<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+							<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+						</div>
+					</div>
+					<div class="pi-text">
+						<h6>$35,00</h6>
+						<p>Flamboyant Pink Top </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-center pt-5">
+			<button class="site-btn sb-line sb-dark">LOAD MORE</button>
+		</div>
+	</div>
+</section>
+*@<!-- Product filter section end -->
+
+<!-- Banner section -->
+<!-- Banner section end  -->
